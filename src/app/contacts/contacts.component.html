@@ -1,0 +1,6 @@
+<form [formGroup]="searchForm">
+  <input type="text" formControlName="name" placeholder="character name">
+  <button (click)="searchForCharacter()" [disabled]="searchForm.invalid">Search Contacts</button>
+</form>
+
+{{ contactsResult | async | json }}

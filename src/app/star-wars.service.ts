@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable, of, pipe} from 'rxjs';
 import {mergeMap, map} from 'rxjs/operators';
 
-interface ContactCard {
+export interface ContactCard {
   name: string;
   gender: 'male' | 'female';
 }
@@ -19,9 +19,9 @@ export class StarWarsService {
   constructor(private http: HttpClient) {
   }
 
-  private static mapResponseToContactCard(response: any): ContactCard[] {
+  private static mapResponseToContactCards(response: any): Observable<ContactCard[]> {
 
-    return response.results.pipe(
+    return of(response.results.
       map((result: any) => {
         return {
           name: result.name,
@@ -31,10 +31,10 @@ export class StarWarsService {
   }
 
 
-  public searchForPerson(name: string): Observable<ContactCard> {
-    return this.http.get(`${this.baseUrl}people/${name}`)
+  public searchForCharacter(name: string): Observable<ContactCard[]> {
+    return this.http.get(`${this.baseUrl}people/?search=${name}`)
       .pipe(
-        mergeMap((response: any) => StarWarsService.mapResponseToContactCard(response))
+        mergeMap((response: any) => StarWarsService.mapResponseToContactCards(response))
       );
   }
 

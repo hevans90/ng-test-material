@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-
-import {StarWarsService} from '../star-wars.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Observable} from 'rxjs';
+
+import {ContactCard, StarWarsService} from '../star-wars.service';
 
 @Component({
   selector: 'app-contacts',
@@ -11,6 +12,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class ContactsComponent implements OnInit {
 
   public searchForm: FormGroup;
+  public contactsResult: Observable<ContactCard[]>;
 
   public ngOnInit() {
     this.searchForm = new FormGroup({
@@ -22,8 +24,8 @@ export class ContactsComponent implements OnInit {
     private starWarsService: StarWarsService
   ) {}
 
-  public searchForCharacter(name: string) {
-    return this.starWarsService.searchForPerson(name);
+  public searchForCharacter() {
+    this.contactsResult = this.starWarsService.searchForCharacter(this.searchForm.get('name').value);
   }
 
 }
