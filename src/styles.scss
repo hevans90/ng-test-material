@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+.splash {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.25s ease-in-out, visibility 1.25s;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+app-root:not(:empty) + .splash {
+  opacity: 0;
+  visibility: hidden;
+}
