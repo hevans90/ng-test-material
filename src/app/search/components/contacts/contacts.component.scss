@@ -11,3 +11,12 @@ form {
     margin-right: 10px;
   }
 }
+.characters__results {
+  display: flex;
+  flex-wrap: wrap;
+
+  app-contact {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}

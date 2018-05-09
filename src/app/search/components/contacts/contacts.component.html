@@ -23,7 +23,9 @@
   ></mat-spinner>
 </form>
 
-<app-contact
-  *ngFor="let contact of (contactsResult | async);"
-  [contact]="contact"
-></app-contact>
+<div class="characters__results">
+  <app-contact
+    *ngFor="let contact of (contactsResult | async);"
+    [contact]="contact"
+  ></app-contact>
+</div>

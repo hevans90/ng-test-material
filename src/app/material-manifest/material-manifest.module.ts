@@ -7,10 +7,12 @@ import {
   MatInputModule,
   MatButtonModule,
   MatProgressSpinnerModule,
+  MatCardModule,
 } from '@angular/material';
 
 const modules = [
   MatToolbarModule,
+  MatCardModule,
   MatFormFieldModule,
   MatInputModule,
   MatButtonModule,
