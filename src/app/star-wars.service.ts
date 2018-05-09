@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable, of, pipe} from 'rxjs';
-import {mergeMap, map} from 'rxjs/operators';
+import {Observable, of} from 'rxjs';
+import {mergeMap} from 'rxjs/operators';
 
 export interface ContactCard {
   name: string;
@@ -16,8 +16,7 @@ export class StarWarsService {
 
   private baseUrl = 'https://swapi.co/api/';
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   private static mapResponseToContactCards(response: any): Observable<ContactCard[]> {
 
