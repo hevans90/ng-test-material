@@ -3,5 +3,5 @@
   <button (click)="searchForCharacter()" [disabled]="searchForm.invalid">Search Contacts</button>
 </form>
 
-<app-contact *ngFor="let contact of (contactsResult | async);" [contact]="contact"></app-contact>
+<app-contact *ngFor="let contact of contactsResult;" [contact]="contact"></app-contact>
 

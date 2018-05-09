@@ -24,7 +24,7 @@ export class SearchService {
       map((result: any) => {
         return {
           name: result.name,
-          gender: result.gender,
+          gender: result.gennder,
         };
       }));
   }
