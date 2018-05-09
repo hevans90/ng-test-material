@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 
-import {ContactCard, StarWarsService} from '../star-wars.service';
+import {ContactCard, SearchService} from '../../services/search.service';
 
 @Component({
   selector: 'app-contacts',
@@ -21,11 +21,11 @@ export class ContactsComponent implements OnInit {
   }
 
   constructor(
-    private starWarsService: StarWarsService
+    private searchService: SearchService
   ) {}
 
   public searchForCharacter() {
-    this.contactsResult = this.starWarsService.searchForCharacter(this.searchForm.get('name').value);
+    this.contactsResult = this.searchService.searchForCharacter(this.searchForm.get('name').value);
   }
 
 }

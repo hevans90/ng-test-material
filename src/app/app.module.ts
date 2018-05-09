@@ -1,18 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {ReactiveFormsModule} from '@angular/forms';
-
-import { MaterialManifestModule } from './material-manifest/material-manifest.module';
-import { AppComponent } from './app.component';
-import {StarWarsService} from './star-wars.service';
-import {ContactComponent} from './contact/contact.component';
-import {ContactsComponent} from './contacts/contacts.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
+import {CommonModule} from '@angular/common';
+
+import {MaterialManifestModule} from './material-manifest/material-manifest.module';
+import {AppComponent} from './app.component';
+import {SearchService} from './search/services/search.service';
+import {SearchModule} from './search/search.module';
 
 @NgModule({
-  declarations: [AppComponent, ContactComponent, ContactsComponent],
-  imports: [BrowserModule, MaterialManifestModule, ReactiveFormsModule, HttpClientModule],
-  providers: [StarWarsService],
+  declarations: [AppComponent],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    MaterialManifestModule,
+    HttpClientModule,
+    SearchModule
+  ],
+  providers: [SearchService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

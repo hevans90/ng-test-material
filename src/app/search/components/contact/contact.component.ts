@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-import {ContactCard} from '../star-wars.service';
+import {ContactCard} from '../../services/search.service';
 
 @Component({
   selector: 'app-contact',

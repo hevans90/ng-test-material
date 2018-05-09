@@ -12,7 +12,7 @@ export interface ContactCard {
   providedIn: 'root'
 })
 
-export class StarWarsService {
+export class SearchService {
 
   private baseUrl = 'https://swapi.co/api/';
 
@@ -33,7 +33,7 @@ export class StarWarsService {
   public searchForCharacter(name: string): Observable<ContactCard[]> {
     return this.http.get(`${this.baseUrl}people/?search=${name}`)
       .pipe(
-        mergeMap((response: any) => StarWarsService.mapResponseToContactCards(response))
+        mergeMap((response: any) => SearchService.mapResponseToContactCards(response))
       );
   }
 
