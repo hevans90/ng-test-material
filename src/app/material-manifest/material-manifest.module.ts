@@ -1,9 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MatToolbarModule } from '@angular/material';
+import {
+  MatToolbarModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule,
+  MatProgressSpinnerModule,
+} from '@angular/material';
 
-const modules = [MatToolbarModule];
+const modules = [
+  MatToolbarModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule,
+  MatProgressSpinnerModule,
+];
 
 @NgModule({
   imports: [CommonModule, ...modules],

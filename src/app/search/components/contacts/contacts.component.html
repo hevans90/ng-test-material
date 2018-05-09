@@ -1,7 +1,29 @@
 <form [formGroup]="searchForm">
-  <input type="text" formControlName="name" placeholder="character name">
-  <button (click)="searchForCharacter()" [disabled]="searchForm.invalid">Search Contacts</button>
+
+  <mat-form-field>
+    <input
+      matInput
+      formControlName="name"
+      placeholder="character name"
+    >
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="searchForCharacter()"
+    [disabled]="searchForm.invalid"
+  >
+    Search Contacts
+  </button>
+
+  <mat-spinner
+    diameter="40"
+    *ngIf="loading && !(contactsResult | async)"
+  ></mat-spinner>
 </form>
 
-<app-contact *ngFor="let contact of contactsResult;" [contact]="contact"></app-contact>
-
+<app-contact
+  *ngFor="let contact of (contactsResult | async);"
+  [contact]="contact"
+></app-contact>
