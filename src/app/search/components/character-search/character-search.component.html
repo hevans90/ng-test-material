@@ -14,18 +14,18 @@
     (click)="searchForCharacter()"
     [disabled]="searchForm.invalid"
   >
-    Search Contacts
+    Search Characters
   </button>
 
   <mat-spinner
     diameter="40"
-    *ngIf="loading && !(contactsResult | async)"
+    *ngIf="loading && !(charactersResult | async)"
   ></mat-spinner>
 </form>
 
 <div class="characters__results">
-  <app-contact
-    *ngFor="let contact of (contactsResult | async);"
-    [contact]="contact"
-  ></app-contact>
+  <app-character
+    *ngFor="let char of (charactersResult | async);"
+    [character]="char"
+  ></app-character>
 </div>

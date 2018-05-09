@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 
-import { ContactCard, SearchService } from '../../services/search.service';
+import { CharacterCard, SearchService } from '../../services/search.service';
 
 @Component({
-  selector: 'app-contacts',
-  templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.scss'],
+  selector: 'app-character-search',
+  templateUrl: './character-search.component.html',
+  styleUrls: ['./character-search.component.scss'],
 })
-export class ContactsComponent implements OnInit {
+export class CharacterSearchComponent implements OnInit {
   public searchForm: FormGroup;
-  public contactsResult: Observable<ContactCard[]>;
+  public charactersResult: Observable<CharacterCard[]>;
   public loading = false;
 
   public ngOnInit() {
@@ -24,7 +24,7 @@ export class ContactsComponent implements OnInit {
 
   public searchForCharacter() {
     this.loading = true;
-    this.contactsResult = this.searchService.searchForCharacter(
+    this.charactersResult = this.searchService.searchForCharacter(
       this.searchForm.get('name').value,
     );
   }
