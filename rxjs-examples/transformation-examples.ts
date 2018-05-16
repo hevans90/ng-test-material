@@ -29,4 +29,4 @@ setTimeout(() => {
   );
   console.log('\nBasic switchMap:');
   const subscribe4 = example4.subscribe(val => console.log(`inner: ${val}`));
-}, 2000);
+}, 4000);
