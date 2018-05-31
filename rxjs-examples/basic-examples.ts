@@ -15,6 +15,6 @@ console.log('Basic concat:');
 const subscribe1 = example1.subscribe(val => console.log(val));
 
 // forkJoin: return an array of the latest values from each stream
-const example2 = forkJoin(sourceOne, sourceTwo);
-console.log('Basic forkJoin:');
-const subscribe2 = example2.subscribe(val => console.log(val));
+// const example2 = forkJoin(sourceOne, sourceTwo);
+// console.log('Basic forkJoin:');
+// const subscribe2 = example2.subscribe(val => console.log(val));

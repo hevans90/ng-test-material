@@ -20,13 +20,11 @@ console.log('Basic mergeMap:');
 const subscribe3 = example3.subscribe(val => console.log(`inner: ${val}`));
 
 // switchMap: emit payloads from outer observable until inner emits, at which point cancel outer
-setTimeout(() => {
-  const example4 = sourceOne.pipe(
-    switchMap(val => {
-      console.log(`outer: ${val}`);
-      return sourceTwo;
-    }),
-  );
-  console.log('\nBasic switchMap:');
-  const subscribe4 = example4.subscribe(val => console.log(`inner: ${val}`));
-}, 4000);
+// const example4 = sourceOne.pipe(
+//   switchMap(val => {
+//     console.log(`outer: ${val}`);
+//     return sourceTwo;
+//   }),
+// );
+// console.log('\nBasic switchMap:');
+// const subscribe4 = example4.subscribe(val => console.log(`inner: ${val}`));
