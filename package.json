@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test --watch=true --code-coverage",
     "lint": "ng lint",
-    "e2e": "ng e2e",
+    "e2e": "ng e2e --port=4300",
     "rxjs-basic": "ts-node rxjs-examples/basic-examples.ts --p=rxjs-examples/tsconfig.json",
     "rxjs-adv": "ts-node rxjs-examples/transformation-examples.ts --p=rxjs-examples/tsconfig.json"
   },

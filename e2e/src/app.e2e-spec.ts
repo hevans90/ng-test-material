@@ -1,4 +1,5 @@
 import { AppPage } from './app.po';
+import { browser } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -7,8 +8,10 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should navigate to blocks', async () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+
+    const currUrl = await browser.getCurrentUrl();
+    expect(currUrl).toEqual('WHY IS THE BROWSER NOT NAVIGATING?!');
   });
 });
