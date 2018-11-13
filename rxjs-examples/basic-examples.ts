@@ -1,4 +1,4 @@
-import { of, forkJoin } from 'rxjs';
+import { forkJoin, of } from 'rxjs';
 import { concat } from 'rxjs/operators';
 
 console.log('\nRxJs Examples\n');
@@ -14,7 +14,7 @@ const example1 = sourceOne.pipe(concat(sourceTwo));
 console.log('Basic concat:');
 const subscribe1 = example1.subscribe(val => console.log(val));
 
-// forkJoin: return an array of the latest values from each stream
-// const example2 = forkJoin(sourceOne, sourceTwo);
-// console.log('Basic forkJoin:');
-// const subscribe2 = example2.subscribe(val => console.log(val));
+//forkJoin: return an array of the latest values from each stream
+const example2 = forkJoin(sourceOne, sourceTwo);
+console.log('Basic forkJoin:');
+const subscribe2 = example2.subscribe(val => console.log(val));
