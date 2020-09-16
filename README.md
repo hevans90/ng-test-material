@@ -12,3 +12,11 @@ Ensure you do a `yarn` inside the repo to install all the required dependencies,
 - [advanced examples](https://github.com/hevans90/ng-test-material/blob/master/rxjs-examples/transformation-examples.ts) (combination operators): `yarn rxjs-adv`
 - [example real-world functions](https://github.com/hevans90/ng-test-material/blob/master/rxjs-examples/function-examples.ts) that return [Observables](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html), written using a mix of operators
 - [unit-tests for these examples](https://github.com/hevans90/ng-test-material/blob/master/rxjs-examples/function-examples.spec.ts), written using [jest-marbles](https://www.npmjs.com/package/jest-marbles): `yarn test-rxjs`
+
+### YOUR TASK (rxjs)
+
+- Open a terminal
+- Run the unit tests for the (now broken) rxjs examples `yarn test-rxjs`
+- Open an IDE like VSCode and open [this local file](./rxjs-examples/function-examples.ts)
+
+- Fix them!
