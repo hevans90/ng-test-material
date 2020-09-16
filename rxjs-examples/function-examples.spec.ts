@@ -92,8 +92,8 @@ describe('mergeMap Example', () => {
 });
 
 describe('switchMap Example', () => {
-  it('should behave identially to mergeMap for two streams of adequate outer payload spacing', () => {
-    const values1 = { a: 1, b: 2, c: 3 };
+  it('should behave identically to mergeMap for two streams of adequate outer payload spacing', () => {
+    const values1 = { a: 1, b: 2, c: 2 };
     const values2 = { d: 4, e: 5, f: 6 };
 
     const outer = cold('   -a------b------c----|', values1);
@@ -104,7 +104,7 @@ describe('switchMap Example', () => {
   });
 
   it('should cancel inner subscriptions if outer emits while inner is emitting', () => {
-    const values1 = { a: 1, b: 2, c: 3 };
+    const values1 = { a: 2, b: 2, c: 3 };
     const values2 = { d: 4, e: 5, f: 6 };
 
     const outer = cold('   -a---b---c----|', values1);

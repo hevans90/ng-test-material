@@ -18,5 +18,6 @@ Ensure you do a `yarn` inside the repo to install all the required dependencies,
 - Open a terminal
 - Run the unit tests for the (now broken) rxjs examples `yarn test-rxjs`
 - Open an IDE like VSCode and open [this local file](./rxjs-examples/function-examples.ts)
+- Fix the functions! Your terminal will be giving you feedback via jest --watch, and will let you know if the functions are working or not. Each function has a hint & a link to the docs for the operator(s) you need to use.
 
-- Fix them!
+The functions get progressively harder to understand & fix. Try your best.
