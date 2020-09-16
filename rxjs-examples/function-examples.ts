@@ -1,55 +1,55 @@
-import { forkJoin, Observable } from 'rxjs';
-import {
-  concat,
-  filter,
-  map,
-  merge,
-  mergeMap,
-  switchMap,
-} from 'rxjs/operators';
+import { concat, forkJoin, merge, Observable } from 'rxjs';
+import { filter, map, mergeMap, switchMap } from 'rxjs/operators';
 
 /**
- * Returns a concatenated observable of two sources
+ * Should return a concatenated observable of two sources
+ * https://www.learnrxjs.io/learn-rxjs/operators/combination/concat
  */
 export const concatExample = (obs1: Observable<any>, obs2: Observable<any>) =>
-  obs1.pipe(concat(obs2));
+  concat(obs1, obs2);
 
 /**
- * Returns a forkJoined observable of two sources
+ * Should return a forkJoined observable of two sources
+ * https://www.learnrxjs.io/learn-rxjs/operators/combination/forkjoin
  */
 export const forkJoinExample = (obs1: Observable<any>, obs2: Observable<any>) =>
-  forkJoin(obs1, obs2);
+  forkJoin([obs1, obs2]);
 
 /**
- * Returns a mapped observable of payloads multiplied by 2
+ * Should return a mapped observable of payloads multiplied by 2
+ * https://www.learnrxjs.io/learn-rxjs/operators/transformation/map
  */
 export const mapExample = (obs1: Observable<number>) =>
   obs1.pipe(map(val => val * 2));
 
 /**
- * Returns a filtered observable of payloads divisible by 2
+ * Should return a filtered observable of payloads divisible by 2
+ * https://www.learnrxjs.io/learn-rxjs/operators/filtering/filter
  */
 export const filterExample = (obs1: Observable<number>) =>
   obs1.pipe(filter(val => val % 2 === 0));
 
 /**
- * Returns a merged observable of two sources
+ * Should return a merged observable of two sources
+ * https://www.learnrxjs.io/learn-rxjs/operators/combination/merge
  */
 export const mergeExample = (obs1: Observable<any>, obs2: Observable<any>) =>
-  obs1.pipe(merge(obs2));
+  merge(obs1, obs2);
 
 /**
- * Returns a merge-mapped stream of inner & outer sources
+ * Should return a merge-mapped stream of inner & outer sources
+ * https://www.learnrxjs.io/learn-rxjs/operators/transformation/mergemap
  */
 export const mergeMapExample = (
   outer: Observable<any>,
-  inner: Observable<any>,
+  inner: Observable<any>
 ) => outer.pipe(mergeMap(x => inner.pipe(map(val => val * +x))));
 
 /**
- * Returns a switch-mapped stream of inner & outer observables
+ * Should return a switch-mapped stream of inner & outer observables
+ * https://www.learnrxjs.io/learn-rxjs/operators/transformation/switchmap
  */
 export const switchMapExample = (
   outer: Observable<any>,
-  inner: Observable<any>,
+  inner: Observable<any>
 ) => outer.pipe(switchMap(() => inner));

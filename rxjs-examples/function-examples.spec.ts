@@ -1,4 +1,4 @@
-import { cold } from 'jasmine-marbles';
+import { cold } from 'jest-marbles';
 import {
   concatExample,
   filterExample,
@@ -9,7 +9,7 @@ import {
   switchMapExample,
 } from './function-examples';
 
-//guidance: https://github.com/ReactiveX/rxjs/tree/master/spec/operators
+// guidance: https://github.com/ReactiveX/rxjs/tree/master/spec/operators
 
 describe('concat Example', () => {
   it('should concat values from 2 streams, after which complete', () => {
